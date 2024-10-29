@@ -1,7 +1,7 @@
-'use strict';
+import { QueryInterface } from 'sequelize';
 
-module.exports = {
-  async up(queryInterface, Sequelize) {
+export default {
+  async up(queryInterface: QueryInterface) {
     return queryInterface.bulkInsert('roles', [
       {
         id: 1,
@@ -24,7 +24,7 @@ module.exports = {
     ], {});
   },
 
-  async down(queryInterface, Sequelize) {
-    return queryInterface.bulkDelete('roles', null, {});
+  async down(queryInterface: QueryInterface) {
+    return queryInterface.bulkDelete('roles', {}, {});
   }
 };

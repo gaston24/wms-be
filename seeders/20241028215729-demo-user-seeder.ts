@@ -1,7 +1,7 @@
-'use strict';
+import { QueryInterface } from 'sequelize';
 
-module.exports = {
-  async up(queryInterface, Sequelize) {
+export default {
+  async up(queryInterface: QueryInterface) {
     return queryInterface.bulkInsert('users', [
       {
         id: 1,
@@ -10,7 +10,7 @@ module.exports = {
         user_name: 'gaston2486',
         email: 'gaston.marcilio@gmail.com',
         password: '$2a$10$A9vzdjfbA.49y.rR1yQnV.sBcsGtyr45irWsrW6fFuIiFUNy2yBjG',
-        role_id: 1, 
+        role_id: 1,
         created_at: new Date(),
         updated_at: new Date()
       },
@@ -21,7 +21,7 @@ module.exports = {
         user_name: 'alexis5665',
         email: 'alexis.torrez@gmail.com',
         password: '$2a$10$A9vzdjfbA.49y.rR1yQnV.sBcsGtyr45irWsrW6fFuIiFUNy2yBjG',
-        role_id: 1, 
+        role_id: 1,
         created_at: new Date(),
         updated_at: new Date()
       },
@@ -32,7 +32,7 @@ module.exports = {
         user_name: 'mariaf',
         email: 'maria.fernandez@gmail.com',
         password: '$2a$10$A9vzdjfbA.49y.rR1yQnV.sBcsGtyr45irWsrW6fFuIiFUNy2yBjG',
-        role_id: 1, 
+        role_id: 1,
         created_at: new Date(),
         updated_at: new Date()
       },
@@ -43,14 +43,14 @@ module.exports = {
         user_name: 'juanp',
         email: 'juan.perez@gmail.com',
         password: '$2a$10$A9vzdjfbA.49y.rR1yQnV.sBcsGtyr45irWsrW6fFuIiFUNy2yBjG',
-        role_id: 1, 
+        role_id: 1,
         created_at: new Date(),
         updated_at: new Date()
       }
     ], {});
   },
 
-  async down(queryInterface, Sequelize) {
-    return queryInterface.bulkDelete('users', null, {});
+  async down(queryInterface: QueryInterface) {
+    return queryInterface.bulkDelete('users', {}, {});
   }
 };

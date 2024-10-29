@@ -25,10 +25,10 @@ npm install
 docker-compose up -d
 
 # run migrations
-npx sequelize-cli db:migrate
+npm migrate-run
 
 # run seeders
-npx sequelize-cli db:seed:all
+npm seed-run
 
 # start app
 npm run dev
