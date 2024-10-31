@@ -6,6 +6,8 @@ import configJson from '../config/config';
 
 import { User, initUserModel } from './user';
 import { Role, initRoleModel } from './role';
+import { Article, initArticleModel } from './article';
+import { Location, initLocationModel } from './location';
 
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
@@ -29,6 +31,8 @@ const db = {
   Sequelize,
   User: initUserModel(sequelize),
   Role: initRoleModel(sequelize),
+  Article: initArticleModel(sequelize),
+  Location: initLocationModel(sequelize),
 };
 
 // Asociaciones
@@ -39,4 +43,4 @@ Object.values(db).forEach((model: any) => {
 });
 
 export default db;
-export { User, Role };
+export { User, Role, Article, Location };
