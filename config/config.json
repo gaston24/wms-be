@@ -1,0 +1,24 @@
+{
+    "development": {
+      "username": "root",
+      "password": "root",
+      "database": "wms-db",
+      "host": "172.29.0.2",
+      "dialect": "mysql"
+    },
+    "test": {
+      "username": "root",
+      "password": "root",
+      "database": "wms-db",
+      "host": "172.29.0.2",
+      "dialect": "mysql"
+    },
+    "production": {
+      "username": "root",
+      "password": "root",
+      "database": "wms-db",
+      "host": "172.29.0.2",
+      "dialect": "mysql"
+    }
+  }
+  

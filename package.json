@@ -2,27 +2,37 @@
   "name": "wms-be",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "migrate-run": "npx sequelize-cli db:migrate",
-    "migrate-undo": "npx sequelize-cli db:migrate:undo",
-    "seed-run": "npx sequelize-cli db:seed:all"
+    "migrate-run": "ts-node -r tsconfig-paths/register ./node_modules/.bin/sequelize db:migrate",
+    "migrate-undo": "ts-node -r tsconfig-paths/register ./node_modules/.bin/sequelize db:migrate:undo",
+    "seed-run": "ts-node -r tsconfig-paths/register ./node_modules/.bin/sequelize db:seed:all",
+    "seed-undo": "ts-node -r tsconfig-paths/register ./node_modules/.bin/sequelize db:seed:undo:all"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.8.2",
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.11.3",
     "sequelize": "^6.37.4",
-    "sequelize-cli": "^6.6.2"
+    "sequelize-cli": "^6.6.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.6.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.7"
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.7",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.1"
   }
 }

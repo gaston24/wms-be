@@ -1,9 +1,10 @@
-'use strict';
-module.exports = {
-  async up(queryInterface, Sequelize) {
+import { QueryInterface, DataTypes } from 'sequelize';
+
+export default {
+  async up(queryInterface: QueryInterface) {
     await queryInterface.addColumn('users', 'role_id', {
-      type: Sequelize.INTEGER,
-      allowNull: true,  
+      type: DataTypes.INTEGER,
+      allowNull: true,
       references: {
         model: 'roles',
         key: 'id'
@@ -12,7 +13,7 @@ module.exports = {
       onDelete: 'SET NULL'
     });
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface: QueryInterface) {
     await queryInterface.removeColumn('users', 'role_id');
   }
 };
